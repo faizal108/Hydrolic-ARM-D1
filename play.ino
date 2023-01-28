@@ -15,15 +15,31 @@ void startPlaying() {
           int prev_value = counter1;
           Serial.print("Value : ");
           Serial.println(p1_value);
-          if (p1_value > prev_value) {
-            for (int i = prev_value ; i < p1_value ; i++) {
-              digitalWrite(upBtnPin, HIGH);
-            }
-          } else {
-            for (int i = prev_value ; i > p1_value ; i--) {
-              digitalWrite(downBtnPin, HIGH);
-            }
+          while(p1_value > prev_value){
+            digitalWrite(upLedPin, HIGH);
+            digitalWrite(downLedPin, LOW);
+            prev_value = counter1;
           }
+
+          while(p1_value < prev_value){
+            digitalWrite(downLedPin, HIGH);
+            digitalWrite(upLedPin, LOW);
+            prev_value = counter1;
+          }
+          
+//          if (p1_value > prev_value) {
+//            for (int i = prev_value ; i < p1_value ; i++) {
+//              digitalWrite(upLedPin, HIGH);
+//              digitalWrite(downLedPin, LOW);
+//              delay(200);q  
+//            }
+//          } else {
+//            for (int i = prev_value ; i > p1_value ; i--) {
+//              digitalWrite(downLedPin, HIGH);
+//              digitalWrite(upLedPin, LOW);
+//              delay(200);
+//            }
+//          }
 
           break;
         }

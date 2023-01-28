@@ -117,6 +117,7 @@ void loop() {
 
   //for UP
   if (upBtnState == HIGH) {
+//    Serial.println("UP");
     digitalWrite(upLedPin, HIGH);
   } else {
     digitalWrite(upLedPin, LOW);
@@ -124,6 +125,7 @@ void loop() {
 
   //for DOWN
   if (downBtnState == HIGH) {
+//    Serial.println("DOWN");
     digitalWrite(downLedPin, HIGH);
   } else {
     digitalWrite(downLedPin, LOW);
@@ -141,9 +143,11 @@ void loop() {
   //for playing a record
   if (playBtnState == HIGH) {
     digitalWrite(playLedPin, HIGH);
+    Serial.println("Playing your moves.......");
     startPlaying();
   } else {
     digitalWrite(playLedPin, LOW);
   }
+
 
 }
