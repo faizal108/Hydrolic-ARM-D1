@@ -1,7 +1,8 @@
 void startPlaying() {
   Serial.println("Playing your saved recording.......");
+  
   for (int i = 0 ; i < seq_index; i++) {
-
+    delay(3000);
     int pump = seq_pointer[i] / 1000;
     Serial.print("Sequence pointer : ");
     Serial.println(seq_pointer[i]);
@@ -31,7 +32,7 @@ void startPlaying() {
 //            for (int i = prev_value ; i < p1_value ; i++) {
 //              digitalWrite(upLedPin, HIGH);
 //              digitalWrite(downLedPin, LOW);
-//              delay(200);q  
+//              delay(200);  
 //            }
 //          } else {
 //            for (int i = prev_value ; i > p1_value ; i--) {
